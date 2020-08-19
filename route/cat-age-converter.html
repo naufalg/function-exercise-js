@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Age Converter</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+    <div>
+      <h3>Soal</h3>
+      <p>
+        Kita akan membuat program untuk menghitung umur kucing dalam usia
+        manusia. Poin-poinnya adalah:
+      </p>
+      <ul>
+        <li>
+          Pada usia 1 tahun, umur kucing adalah 15 kali umur manusia
+        </li>
+        <li>
+          Pada usia 2 tahun, umur kucing adalah 24 kali umur manusia
+        </li>
+        <li>
+          Pada usia 3 tahun (> 24 tahun) dan seterusnya umur kucing adalah
+          ditambah 4 dari umur manusia ketika 24 tahun. Jadi jika umur kucing
+          saat ini 4 tahun berarti dalam kalender tahun kucing, umurnya adalah
+          32 tahun.
+        </li>
+        <li>
+          Buat sebuah ARROW function yang menerima parameter umur kucing
+          berdasarkan perhitungan tahun manusia.
+        </li>
+      </ul>
+      <h3>Jawaban</h3>
+      <pre>
+            <code>
+                const umurKucing = (tahun) => {
+                    if (tahun == 1) {
+                      return 15;
+                    } else if (tahun == 2) {
+                      return 24;
+                    } else if (tahun > 2) {
+                      return 24 + 4 * (tahun - 2);
+                    } else {
+                      return "salah input nilai";
+                    }
+                  };
+            </code>
+        </pre>
+    </div>
+
+    <!-- script -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
