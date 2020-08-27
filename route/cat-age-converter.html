@@ -70,6 +70,19 @@
     <div></div>
 
     <!-- script -->
+    <script>
+      const umurKucing = (tahun) => {
+                          if (tahun == 1) {
+                            return 15;
+                          } else if (tahun == 2) {
+                            return 24;
+                          } else if (tahun > 2) {
+                            return 24 + 4 * (tahun - 2);
+                          } else {
+                            return "salah input nilai";
+                          }
+                        };
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
