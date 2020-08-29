@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-func.html">Back</a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Soal</h3>
+          <p>
+            Buat sebuah function helper untuk convert temperatur Celcius ke
+            Fahrenherit dan sebaliknya. Ikuti poin-poin dibawah ini:
+          </p>
+          <ul>
+            <li>
+              Buat sebuah function helper lalu gunakan pada function
+              converternya. Jadi kita tinggal membuat function helper dan
+              function utama untuk convert fahrenheit ke Celcius
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Jawaban</h3>
+          <details>
+            <button class="btn btn-primary" onclick="celciusToFahrenheit()">
+              C => F
+            </button>
+            <button class="btn btn-success" onclick="celciusToReamur()">
+              C => R
+            </button>
+            <button class="btn btn-warning" onclick="fahrenheitToCelcius()">
+              F => C
+            </button>
+            <button class="btn btn-primary" onclick="fahrenheitToReamur()">
+              F => R
+            </button>
+            <button class="btn btn-success" onclick="reamurToCelcius()">
+              R => C
+            </button>
+            <button class="btn btn-warning" onclick="reamurToFahrenheit()">
+              R => F
+            </button>
+            <br />
+            <p id="temp-text"></p>
+            <details>
+              <pre>
+                <code>
+                    function celciusDivider(celcius) {
+                        return celcius / 5;
+                      }
+                      
+                      function reamurDivider(reamur) {
+                        return reamur / 4;
+                      }
+                      
+                      function fahrenheitDivider(fahrenheit) {
+                        return (fahrenheit - 32) / 9;
+                      }
+                      
+                      function celciusToFahrenheit(celcius) {
+                        return celciusDivider(celcius) * 9 + 32;
+                      }
+                      
+                      function fahrenheitToCelcius(fahrenheit) {
+                        return fahrenheitDivider(fahrenheit) * 5;
+                      }
+                      
+                      function celciusToReamur(celcius) {
+                        return celciusDivider(celcius) * 4;
+                      }
+                      
+                      function reamurToCelcius(reamur) {
+                        return reamurDivider(reamur) * 5;
+                      }
+                      
+                      function fahrenheitToReamur(fahrenheit) {
+                        return fahrenheitDivider(fahrenheit) * 4;
+                      }
+                      
+                      function reamurToFahrenheit(reamur) {
+                        return reamurDivider(reamur) * 9 + 32;
+                      }
+                </code>
+            </pre>
+            </details>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <!-- script -->
+    <!-- termometer -->
+    <script>
+      let txt;
+      let input;
+      let suhu;
+
+      function celciusDivider(input) {
+        return input / 5;
+      }
+
+      function reamurDivider(input) {
+        return input / 4;
+      }
+
+      function fahrenheitDivider(input) {
+        return (input - 32) / 9;
+      }
+
+      function celciusToFahrenheit() {
+        input = prompt("C => F");
+        suhu = celciusDivider(input) * 9 + 32;
+        txt = suhu + " degree F";
+        document.getElementById("temp-text").innerHTML = txt;
+      }
+
+      function fahrenheitToCelcius() {
+        input = prompt("F => C");
+        suhu = fahrenheitDivider(input) * 5;
+        txt = suhu + " degree C";
+        document.getElementById("temp-text").innerHTML = txt;
+      }
+
+      function celciusToReamur() {
+        input = prompt("C => R");
+        suhu = celciusDivider(input) * 4;
+        txt = suhu + " degree R";
+        document.getElementById("temp-text").innerHTML = txt; 
+      }
+
+      function reamurToCelcius() {
+        input = prompt("R => C");
+        suhu = reamurDivider(input) * 5;
+        txt = suhu + " degree C";
+        document.getElementById("temp-text").innerHTML = txt; 
+      }
+
+      function fahrenheitToReamur() {
+        input = prompt("F => R");
+        suhu = fahrenheitDivider(input) * 4;
+        txt = suhu + " degree R";
+        document.getElementById("temp-text").innerHTML = txt; 
+      }
+
+      function reamurToFahrenheit() {
+        input = prompt("R => F");
+        suhu = reamurDivider(input) * 9 + 32;
+        txt = suhu + " degree F";
+        document.getElementById("temp-text").innerHTML = txt; 
+      }
+    </script>
+    <!-- bs -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

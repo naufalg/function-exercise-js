@@ -11,12 +11,12 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <!-- body -->
   <body>
     <div class="container">
-      <a class="btn btn-success" href="../index.html">Home</a>
+      <a class="btn btn-success" href="../js-func.html">Back</a>
     </div>
     <div class="container">
       <div class="row">
@@ -27,41 +27,48 @@
             huruf kecil.
           </p>
           <ul>
-            <li>
-              Menerima 1 parameter string
-            </li>
-            <li>
-              Gunakan single line block function
-            </li>
+            <li>Menerima 1 parameter string</li>
+            <li>Gunakan single line block function</li>
             <li>
               Output adalah string yang telah diubah formatnya menjadi lower
               case
             </li>
-            <li>
-              Gunakan built in method string
-            </li>
+            <li>Gunakan built in method string</li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <h3>Jawaban</h3>
-          <pre>
-              <code>
-                  const hurufKecil = (kata) => {
-                      return kata.toLowerCase();
-                    };
-              </code>
-          </pre>
+          <details>
+            <button class="btn btn-warning" onclick="hurufKecil()">
+              Try it!
+            </button>
+            <p id="text-result"></p>
+            <details>
+              <pre>
+                <code>
+                    const hurufKecil = (kata) => {
+                        return kata.toLowerCase();
+                      };
+                </code>  
+              </pre>
+            </details>
+          </details>
         </div>
       </div>
     </div>
     <div></div>
 
     <!-- script -->
-    <script>const hurufKecil = (kata) => {
-      return kata.toLowerCase();
-    };</script>
+    <script>
+      const hurufKecil = () => {
+        let txt;
+        let input = prompt("Type here!");
+        txt = input.toLowerCase();
+        document.getElementById("text-result").innerHTML = txt;
+      };
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
