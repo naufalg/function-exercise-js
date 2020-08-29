@@ -11,60 +11,55 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="../route/style/style.css" />
   </head>
   <!-- body -->
   <body>
     <div class="container">
-      <a class="btn btn-success" href="../js-func.html">Back</a>
+      <a class="btn btn-success" href="./js-regex.html">Back</a>
     </div>
     <div class="container">
       <div class="row">
         <div class="col">
-          <h3>Soal</h3>
+          <h3>Hi-Lo regex <br>Soal</h3>
           <p>
-            Kita akan membuat program untuk menghitung umur kucing dalam usia
-            manusia. Poin-poinnya adalah:
+            Buat sebuah program untuk mengecek apakah karakter pertama dalam
+            sebuah string mengandung huruf besar atau tidak. Jika huruf pertama
+            adalah huruf besar. Program akan menampilkan/console.log ‘Huruf
+            pertama adalah huruf besar’ Jika huruf pertama bukan huruf besar.
+            Program akan menampilkan/console.log ‘Huruf pertama adalah huruf
+            kecil’
           </p>
-          <ul>
-            <li>Pada usia 1 tahun, umur kucing adalah 15 kali umur manusia</li>
-            <li>Pada usia 2 tahun, umur kucing adalah 24 kali umur manusia</li>
-            <li>
-              Pada usia 3 tahun (> 24 tahun) dan seterusnya umur kucing adalah
-              ditambah 4 dari umur manusia ketika 24 tahun. Jadi jika umur
-              kucing saat ini 4 tahun berarti dalam kalender tahun kucing,
-              umurnya adalah 32 tahun.
-            </li>
-            <li>
-              Buat sebuah ARROW function yang menerima parameter umur kucing
-              berdasarkan perhitungan tahun manusia.
-            </li>
-          </ul>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <h3>Jawaban</h3>
           <details>
-            <button class="btn btn-warning" onclick="umurKucing()">
+            <button class="btn btn-warning" onclick="hiLoGex()">
               Try it!
             </button>
-            <p id="cat-age"></p>
+            <p id="hi-lo-result"></p>
             <details>
               <pre class="code-area">
                 <code>
-                  const umurKucing = (tahun) => {
-                    if (tahun == 1) {
-                      return 15;
-                    } else if (tahun == 2) {
-                      return 24;
-                    } else if (tahun > 2) {
-                      return 24 + 4 * (tahun - 2);
-                    } else {
-                      return "salah input nilai";
+                  hiLoGex = () => {
+                    let input1 = prompt("your input: ");
+                    let lowGex = /^[a-z]/;
+                    let hiGex = /^[A-Z]/;
+                    let loResult = lowGex.test(input1);
+                    let hiResult = hiGex.test(input1);
+                    if (loResult == true) {
+                      alert(
+                        "your word is " + input1 + " and the first character is lower case"
+                      );
+                    } else if (hiResult == true) {
+                      alert(
+                        "your word is " + input1 + " and the first character is upper case"
+                      );
                     }
                   };
-                </code>
+                            </code>
             </pre>
             </details>
           </details>
@@ -75,21 +70,25 @@
 
     <!-- script -->
     <script>
-      const umurKucing = () => {
-        let catAge = prompt("What is your cat age?");
-        let ageNumb;
+      hiLoGex = () => {
         let txt;
-        if (catAge == 1) {
-          txt = "Your cat is 15 years old";
-        } else if (catAge == 2) {
-          txt = "Your cat is 24 years old";
-        } else if (catAge > 2) {
-          ageNumb = 24+4*(catAge-2)
-          txt = "Your cat is " + ageNumb + " years old";
-        } else {
-          txt = "wrong input";
+        let input1 = prompt("your input: ");
+        let lowGex = /^[a-z]/;
+        let hiGex = /^[A-Z]/;
+        let loResult = lowGex.test(input1);
+        let hiResult = hiGex.test(input1);
+        if (loResult == true) {
+          txt = "your word is " + input1 + " and the first character is lower case";
+          alert(txt);
+          document.getElementById("hi-lo-result").innerHTML = txt;
+        } else if (hiResult == true) {
+          txt = "your word is " + input1 + " and the first character is upper case"
+          alert(txt);
+          document.getElementById("hi-lo-result").innerHTML = txt;
+        } else if (input1 == null) {
+          alert("input invalid")
+          hiLoGex();
         }
-        document.getElementById("cat-age").innerHTML = txt;
       };
     </script>
     <script

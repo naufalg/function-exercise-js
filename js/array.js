@@ -106,8 +106,8 @@ showTweet = (arr, idx) => {
 };
 
 showTweetAll = () => {
-  alert(myTweet)
-}
+  alert(myTweet);
+};
 
 // #### Soal ####
 // 6. Buatlah sebuah program registrasi berisi username dan password

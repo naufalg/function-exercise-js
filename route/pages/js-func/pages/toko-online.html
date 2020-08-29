@@ -11,13 +11,13 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <!-- body -->
   <body>
     <div>
       <div class="container">
-        <a class="btn btn-success" href="../index.html">Home</a>
+        <a class="btn btn-success" href="../js-func.html">Back</a>
       </div>
       <div>
         <div class="container">
@@ -38,22 +38,26 @@
                   Function akan mengembalikan nilai “Terima kasih (nama pembeli)
                   telah membeli produk (produk yang dibeli)”
                 </li>
-                <li>
-                  Panggil function dengan menggunakan console.log()
-                </li>
+                <li>Panggil function dengan menggunakan console.log()</li>
               </ul>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <h3>Jawaban</h3>
-              <pre>
-          <code>
-            function tokoOnline(pembeli, produk) {
-                console.log("Terima kasih " + pembeli + " telah membeli produk " + produk);
-              }
-          </code>
-      </pre>
+              <details>
+                <button class="btn btn-warning" onclick="tokoOnline()">Try it!</button>
+                <p id="result"></p>
+                <details>
+                  <pre>
+                    <code>
+                      function tokoOnline(pembeli, produk) {
+                          console.log("Terima kasih " + pembeli + " telah membeli produk " + produk);
+                        }
+                    </code>
+                </pre>
+                </details>
+              </details>
             </div>
           </div>
         </div>
@@ -61,6 +65,16 @@
       <div></div>
     </div>
     <!-- script -->
+    <script>
+      function tokoOnline() {
+        let pembeli = prompt("Nama anda: ")
+        let produk = prompt("Anda membeli: ")
+        let txt = "Terima kasih " + pembeli + " telah membeli produk " + produk;
+        alert(txt);
+        document.getElementById("result").innerHTML = txt;
+          
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

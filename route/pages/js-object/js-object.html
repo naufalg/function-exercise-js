@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Object</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../route/style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-2.html">Back</a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Javascript Object <br />Soal</h3>
+          <p>
+            Buatlah tampilan buah menggunakan array of object Data yang perlu
+            ditampilkan Nama, warna, nama latin, gambar buah
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Jawaban</h3>
+          <details>
+            <button class="btn btn-warning" onclick="revealIt()">
+              Reveal us!
+            </button>
+            <div class="row center">
+              <div class="col-m-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    class="card-img-top"
+                    src="../../../assets/images/pisang.png"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p id="text-1" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-m-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    class="card-img-top"
+                    src="../../../assets/images/jambu.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p id="text-2" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-m-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    class="card-img-top"
+                    src="../../../assets/images/apel.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p id="text-3" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-m-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    class="card-img-top"
+                    src="../../../assets/images/durian.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p id="text-4" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-m-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    class="card-img-top"
+                    src="../../../assets/images/mangga.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p id="text-5" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-m-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    class="card-img-top"
+                    src="../../../assets/images/semangka.jpg"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p id="text-6" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p id="phone-result"></p>
+            <details>
+              <pre class="code-area">
+                <code>
+                    const buah = [
+                    {
+                      nama: "Pisang",
+                      latin: "Musa acuminata",
+                      warna: "Kuning",
+                    },
+                    {
+                      nama: "Jambu",
+                      latin: "Psidium guajava",
+                      warna: "Hijau",
+                    },
+                    {
+                      nama: "Apel",
+                      latin: "Malus domestica",
+                      warna: "Merah",
+                    },
+                    {
+                      nama: "Durian",
+                      latin: "Durio zibethinus",
+                      warna: "Kuning",
+                    },
+                    {
+                      nama: "Mangga",
+                      latin: "Mangifera indica",
+                      warna: "Hijau-Oranye",
+                    },
+                    {
+                      nama: "Semangka",
+                      latin: "Citrullus lanatus",
+                      warna: "Hijau-merah",
+                    },
+                  ];
+                </code>
+            </pre>
+            </details>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <!-- script -->
+    <script>
+      const buah = [
+        {
+          nama: "Pisang",
+          latin: "Musa acuminata",
+          warna: "Kuning",
+        },
+        {
+          nama: "Jambu",
+          latin: "Psidium guajava",
+          warna: "Hijau",
+        },
+        {
+          nama: "Apel",
+          latin: "Malus domestica",
+          warna: "Merah",
+        },
+        {
+          nama: "Durian",
+          latin: "Durio zibethinus",
+          warna: "Kuning",
+        },
+        {
+          nama: "Mangga",
+          latin: "Mangifera indica",
+          warna: "Hijau-Oranye",
+        },
+        {
+          nama: "Semangka",
+          latin: "Citrullus lanatus",
+          warna: "Hijau-merah",
+        },
+      ];
+
+      revealIt = () => {
+        document.getElementById("text-1").innerHTML =
+          "Buah " +
+          buah[0].nama +
+          " berwarna " +
+          buah[0].warna +
+          " memiliki nama latin " +
+          buah[0].latin;
+
+          document.getElementById("text-2").innerHTML =
+          "Buah " +
+          buah[1].nama +
+          " berwarna " +
+          buah[1].warna +
+          " memiliki nama latin " +
+          buah[1].latin;
+
+          document.getElementById("text-3").innerHTML =
+          "Buah " +
+          buah[2].nama +
+          " berwarna " +
+          buah[2].warna +
+          " memiliki nama latin " +
+          buah[2].latin;
+
+
+          document.getElementById("text-4").innerHTML =
+          "Buah " +
+          buah[3].nama +
+          " berwarna " +
+          buah[3].warna +
+          " memiliki nama latin " +
+          buah[3].latin;
+
+          document.getElementById("text-5").innerHTML =
+          "Buah " +
+          buah[4].nama +
+          " berwarna " +
+          buah[4].warna +
+          " memiliki nama latin " +
+          buah[4].latin;
+
+          document.getElementById("text-6").innerHTML =
+          "Buah " +
+          buah[5].nama +
+          " berwarna " +
+          buah[5].warna +
+          " memiliki nama latin " +
+          buah[5].latin;
+
+      };
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

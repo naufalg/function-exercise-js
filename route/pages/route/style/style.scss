@@ -20,5 +20,15 @@ pre, code {
 //   }
 
   .btn {
-      margin: 2vh 0 0 0;
+      margin: 2vh 0;
+  }
+
+  .card-img-top {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .center {
+    margin: auto;
+    justify-content: center;
+    // align-items: center;
   }
