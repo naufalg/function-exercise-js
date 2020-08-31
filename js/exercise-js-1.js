@@ -1,6 +1,6 @@
 // #### by: Naufal Ghifari (2020/8/14) ####
 // #### SOAL ####
-// 1. Console log data diri//
+// 1. Console log data diri
 // Nama
 // Asal daerah
 // Tanggal lahir
@@ -10,9 +10,9 @@
 // #### JAWABAN ####
 const nama = "Naufal Ghifari";
 const asalDaerah = "Bandung";
-const tanggalLahir = "7 Maret 1997"
+const tanggalLahir = "7 Maret 1997";
 const umur = 23;
-const posisiPekerjaan = "Web Developer"
+const posisiPekerjaan = "Web Developer";
 
 console.log(nama); //output: Naufal Ghifari
 console.log(asalDaerah); //output: Bandung
