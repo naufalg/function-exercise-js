@@ -1,11 +1,22 @@
-/*jshint esversion: 6 */
-// #### by:Naufal Ghifari; 20200829 ####
-// #### Soal ####
-// Buatlah tampilan buah menggunakan array of object
-// Data yang perlu ditampilkan
-// Nama, warna, nama latin, tipe biji, gambar buah
+// jshint esversion: 6
+let hewan = [
+  {
+    name: "cat",
+    leg: 4,
+    fur: true,
+  },
+  {
+    name: "mola-mola",
+    leg: null,
+    fur: false,
+  },
+  {
+    name: "bat",
+    leg: 2,
+    fur: false,
+  },
+];
 
-// #### Jawaban ####
 const buah = [
   {
     nama: "Pisang",
@@ -38,3 +49,5 @@ const buah = [
     warna: "Hijau-merah",
   },
 ];
+
+export { hewan, buah };

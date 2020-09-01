@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP - Module</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../route/style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-oop.html">Back</a>
+    </div>
+    <div class="container">
+      <details>
+        <div class="row">
+          <div class="col">
+            <h3>Soal</h3>
+            <p>
+              Buat sebuah modul dengan ketentuan:
+              <br />
+              data.js berisikan data nama-nama hewan dan juga nama-nama buah.
+              <br />
+              Export data tersebut menggunakan export biasa Import pada index.js
+              kemudian tampilkan data yg sudah diexport menggunakan DOM
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jawaban</h3>
+            <details>
+              <!-- <button class="btn btn-warning" onclick="button()">
+                Try it!
+              </button> -->
+              <p id="result"></p>
+              <details>
+                <pre class="code-area">
+                <code>
+                  //export data.js
+                  let hewan = [
+                    {
+                      name: "cat",
+                      leg: 4,
+                      fur: true,
+                    },
+                    {
+                      name: "mola-mola",
+                      leg: null,
+                      fur: false,
+                    },
+                    {
+                      name: "bat",
+                      leg: 2,
+                      fur: false,
+                    },
+                  ];
+
+                  const buah = [
+                    {
+                      nama: "Pisang",
+                      latin: "Musa acuminata",
+                      warna: "Kuning",
+                    },
+                    {
+                      nama: "Jambu",
+                      latin: "Psidium guajava",
+                      warna: "Hijau",
+                    },
+                    {
+                      nama: "Apel",
+                      latin: "Malus domestica",
+                      warna: "Merah",
+                    },
+                    {
+                      nama: "Durian",
+                      latin: "Durio zibethinus",
+                      warna: "Kuning",
+                    },
+                    {
+                      nama: "Mangga",
+                      latin: "Mangifera indica",
+                      warna: "Hijau-Oranye",
+                    },
+                    {
+                      nama: "Semangka",
+                      latin: "Citrullus lanatus",
+                      warna: "Hijau-merah",
+                    },
+                  ];
+
+                  export { hewan, buah };
+
+                  //import index.js
+                  import { hewan, buah } from "./data.js";
+                </code>
+                </pre>
+              </details>
+            </details>
+          </div>
+        </div>
+      </details>
+      <br />
+      <hr />
+      <br />
+      <details>
+        <div class="row">
+          <div class="col">
+            <h3>Soal</h3>
+            <p>
+              Buat sebuah modul dengan ketentuan:
+              <br />
+              Karyawan.js berisikan class Karyawan yang memiliki beberapa
+              properti dan method
+              <br />
+              Export class tersebut menggunakan export default
+              <br />
+              Import pada index.js kemudian buat object dari class yang sudah
+              dibuat
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jawaban</h3>
+            <details>
+              <!-- <button class="btn btn-warning" onclick="button()">
+                Try it!
+              </button> -->
+              <p id="result"></p>
+              <details>
+                <pre class="code-area">
+                    <code>
+                        // export karyawan.js
+                        // jshint esversion:6
+                        let karyawan = [
+                        { name: "Bill Gates", role: "IT Helpdesk", salary: 1000 },
+                        { name: "Elon Musk", role: "Professional Meme Developer", salary: 3000 },
+                        { name: "Takumi Fujiwara", role: "Professional courier", salary: 5000 },
+                        ];
+
+                        introduce = (i) => {
+                            alert(
+                                `Hi! I'm ${karyawan[i].name} as a ${karyawan[i].role} and paid for ${karyawan[i].salary} dollars`
+                                );
+                            };
+                            
+                        export { karyawan, introduce };
+
+
+                        // import karyawan.js
+                        import {karyawan, introduce} from "./karyawan.js";
+                    </code>
+                </pre>
+              </details>
+            </details>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- script -->
+
+    <script></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
