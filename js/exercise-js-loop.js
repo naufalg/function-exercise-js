@@ -1,3 +1,4 @@
+// jshint esversion:6
 // #### by: Naufal Ghifari (2020/8/14) ####
 // #### SOAL ####
 // 1.Kita sudah mengetahui bahwa banyaknya user maksimal adalah 100.

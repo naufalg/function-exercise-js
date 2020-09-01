@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Odd Even</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../route/style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-loop.html">Back</a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Soal</h3>
+          <p>
+            Lakukan pengulangan dengan FOR LOOP yang melakukan iterasi dari
+            0..20.
+            <br />
+            Setiap iterasi/pengulangan lakukan pengecekan apakah nilai tersebut
+            ganjil atau genap.
+            <br />
+            Tampilkan keterangan ganjil dan genap pada sebuah nilai setiap
+            pengulangan
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Jawaban</h3>
+          <details>
+            <button class="btn btn-warning" onclick="button()">Try it!</button>
+            <p id="result"></p>
+            <details>
+              <pre class="code-area">
+                <code>
+                    for (let i = 0; i<= 20; i++) {
+                        if (i % 2 == 0) {
+                          console.log(i + " bilangan genap");
+                        } else if (i % 2 == 1) {
+                          console.log(i + " bilangan ganjil");
+                        }
+                      }
+                    </code>
+            </pre>
+            </details>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <!-- script -->
+
+    <script>
+      let txt;
+      let arr1 = [];
+      button = () => {
+        for (let i = 0; i <= 20; i++) {
+          if (i % 2 == 0) {
+            arr1.push(i + " genap");
+          } else if (i % 2 == 1) {
+            arr1.push(i + " ganjil");
+          }
+        }
+        txt = arr1.join("<br>");
+        document.getElementById("result").innerHTML = txt;
+      };
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
