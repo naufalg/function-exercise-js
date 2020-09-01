@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Interactive</title>
+    <title>JS Factorial</title>
     <!-- CSS -->
     <link
       rel="stylesheet"
@@ -16,22 +16,24 @@
   <!-- body -->
   <body>
     <div class="container">
-      <a class="btn btn-success" href="../js-intro.html">Back</a>
+      <a class="btn btn-success" href="../js-recursion.html">Back</a>
     </div>
     <div class="container">
       <div class="row">
         <div class="col">
           <h3>Soal</h3>
           <p>
-            /* Membuat interaksi kepada user Prompt data berikut:
+            Buatlah rekursive function untuk menghitung angka faktorial
             <br />
-            Nama user
+            Contoh perhitungan angka faktorial:
             <br />
-            Asal Negara Confirm data user.
+            4! = 4 * 3!
             <br />
-            Apakah data yang diisi sudah benar?
+            4! = 4 * 3 * 2!
             <br />
-            Alert “Terima kasih sudah mengisi form” */
+            4! = 4 * 3 * 2 * 1
+            <br />
+            4! = 24
           </p>
         </div>
       </div>
@@ -39,16 +41,21 @@
         <div class="col">
           <h3>Jawaban</h3>
           <details>
-            <button class="btn btn-warning" onclick="ask()">Try it!</button>
+            <button class="btn btn-warning" onclick="button1()">Try it!</button>
             <p id="result"></p>
             <details>
               <pre class="code-area">
                 <code>
-                    let namaUser = prompt("Isi nama anda: ")
-                    let asalNegara = prompt("isi asal negara anda: ")
-                    confirm("Pastikan anda sudah mengisi data dengan benar.")
-                    alert("Terima kasih sudah mengisi form\n Nama anda " + namaUser + " dan berasal dari negara " + asalNegara + ".")
-                </code>
+                    function faktorial(angka) {
+                        if (angka == 0 || angka == 1) {
+                          return 1;
+                        } else if (angka > 1) {
+                          return angka * faktorial(angka - 1);
+                        } else {
+                          alert("angka harus >= 0");
+                        }
+                      }
+                    </code>
             </pre>
             </details>
           </details>
@@ -60,23 +67,24 @@
     <!-- script -->
 
     <script>
-      ask = () => {
-        let namaUser = prompt("Isi nama anda: ");
-        let asalNegara = prompt("isi asal negara anda: ");
-        if (
-          (confirm("Pastikan anda sudah mengisi data dengan benar.") == true)
-        ) {
-          alert(
-            "Terima kasih sudah mengisi form\n Nama anda " +
-              namaUser +
-              " dan berasal dari negara " +
-              asalNegara +
-              "."
-          );
-        } else {
-          ask();
-        }
-      };
+function button1() {
+    let txt;
+    let arr1 = [];
+    let angka = parseInt(prompt("Masukkan n!: "),10)
+    txt = faktorial(angka);
+    document.getElementById("result").innerHTML = txt;
+}
+
+faktorial = (angka) => {
+    if (angka == 0 || angka == 1) {
+    return 1;
+  } else if (angka > 1) {
+    return angka * faktorial(angka - 1);
+  } else {
+    alert("angka harus >= 0");
+    return ""
+  }
+}
     </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
