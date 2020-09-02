@@ -100,14 +100,14 @@ String.prototype.reverseString = function () {
 // 7.isPrima() -> true
 // 6.isPrima() -> false
 // #### Jawaban ####
-Number.prototype.isPrima = function (n) {
-  if (n == 1) {
+Number.prototype.isPrima = function () {
+  if (this == 1) {
     return false;
-  } else if (n == 2) {
+  } else if (this == 2) {
     return true;
   } else {
-    for (let x = 2; x < n; x++) {
-      if (n % x == 0) {
+    for (let x = 2; x < this; x++) {
+      if (this % x == 0) {
         return false;
       }
     }
@@ -115,7 +115,9 @@ Number.prototype.isPrima = function (n) {
   }
 };
 
-// 7.isPrima()
+
+let num1 = 11;
+num1.isPrima(); //true
 
 // #### Soal ####
 // Tugas 1

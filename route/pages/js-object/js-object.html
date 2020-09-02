@@ -32,124 +32,64 @@
         <div class="col">
           <h3>Jawaban</h3>
           <details>
-            <button class="btn btn-warning" onclick="revealIt()">
+            <button class="btn btn-warning" onclick="display()">
               Reveal us!
             </button>
-            <div class="row center">
-              <div class="col-m-4">
-                <div class="card" style="width: 18rem">
-                  <img
-                    class="card-img-top"
-                    src="../../../assets/images/pisang.png"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <p id="text-1" class="card-text"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-m-4">
-                <div class="card" style="width: 18rem">
-                  <img
-                    class="card-img-top"
-                    src="../../../assets/images/jambu.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <p id="text-2" class="card-text"></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-m-4">
-                <div class="card" style="width: 18rem">
-                  <img
-                    class="card-img-top"
-                    src="../../../assets/images/apel.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <p id="text-3" class="card-text"></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-m-4">
-                <div class="card" style="width: 18rem">
-                  <img
-                    class="card-img-top"
-                    src="../../../assets/images/durian.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <p id="text-4" class="card-text"></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-m-4">
-                <div class="card" style="width: 18rem">
-                  <img
-                    class="card-img-top"
-                    src="../../../assets/images/mangga.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <p id="text-5" class="card-text"></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-m-4">
-                <div class="card" style="width: 18rem">
-                  <img
-                    class="card-img-top"
-                    src="../../../assets/images/semangka.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <p id="text-6" class="card-text"></p>
-                  </div>
-                </div>
-              </div>
+            <div class="container">
+              <div class="row buah center"></div>
             </div>
             <p id="phone-result"></p>
             <details>
               <pre class="code-area">
                 <code>
-                    const buah = [
-                    {
-                      nama: "Pisang",
-                      latin: "Musa acuminata",
-                      warna: "Kuning",
-                    },
-                    {
-                      nama: "Jambu",
-                      latin: "Psidium guajava",
-                      warna: "Hijau",
-                    },
-                    {
-                      nama: "Apel",
-                      latin: "Malus domestica",
-                      warna: "Merah",
-                    },
-                    {
-                      nama: "Durian",
-                      latin: "Durio zibethinus",
-                      warna: "Kuning",
-                    },
-                    {
-                      nama: "Mangga",
-                      latin: "Mangifera indica",
-                      warna: "Hijau-Oranye",
-                    },
-                    {
-                      nama: "Semangka",
-                      latin: "Citrullus lanatus",
-                      warna: "Hijau-merah",
-                    },
-                  ];
-                </code>
+                  let fruit = [
+                  {
+                    nama: "Pisang",
+                    latin: "Musa acuminata",
+                    warna: "Kuning",
+                    img: "../../../assets/images/pisang.png",
+                  },
+                  {
+                    nama: "Jambu",
+                    latin: "Psidium guajava",
+                    warna: "Hijau",
+                    img: "../../../assets/images/jambu.jpg",
+                  },
+                  {
+                    nama: "Apel",
+                    latin: "Malus domestica",
+                    warna: "Merah",
+                    img: "../../../assets/images/apel.jpg",
+                  },
+                  {
+                    nama: "Durian",
+                    latin: "Durio zibethinus",
+                    warna: "Kuning",
+                    img: "../../../assets/images/durian.jpg",
+                  },
+                  {
+                    nama: "Mangga",
+                    latin: "Mangifera indica",
+                    warna: "Hijau-Oranye",
+                    img: "../../../assets/images/mangga.jpg",
+                  },
+                  {
+                    nama: "Semangka",
+                    latin: "Citrullus lanatus",
+                    warna: "Hijau-merah",
+                    img: "../../../assets/images/semangka.jpg",
+                  },
+                ];
+          
+                let display = () => {
+                  let buah = document.querySelector(".buah");
+                  fruit.forEach((item) => {
+                    let card = document.createElement("div");
+                    card.innerHTML = `string literal`;
+                    buah.appendChild(card);
+                  });
+                };                
+              </code>
             </pre>
             </details>
           </details>
@@ -160,90 +100,121 @@
 
     <!-- script -->
     <script>
-      const buah = [
+      let fruit = [
         {
           nama: "Pisang",
           latin: "Musa acuminata",
           warna: "Kuning",
+          img: "../../../assets/images/pisang.png",
         },
         {
           nama: "Jambu",
           latin: "Psidium guajava",
           warna: "Hijau",
+          img: "../../../assets/images/jambu.jpg",
         },
         {
           nama: "Apel",
           latin: "Malus domestica",
           warna: "Merah",
+          img: "../../../assets/images/apel.jpg",
         },
         {
           nama: "Durian",
           latin: "Durio zibethinus",
           warna: "Kuning",
+          img: "../../../assets/images/durian.jpg",
         },
         {
           nama: "Mangga",
           latin: "Mangifera indica",
           warna: "Hijau-Oranye",
+          img: "../../../assets/images/mangga.jpg",
         },
         {
           nama: "Semangka",
           latin: "Citrullus lanatus",
           warna: "Hijau-merah",
+          img: "../../../assets/images/semangka.jpg",
         },
       ];
 
-      revealIt = () => {
-        document.getElementById("text-1").innerHTML =
-          "Buah " +
-          buah[0].nama +
-          " berwarna " +
-          buah[0].warna +
-          " memiliki nama latin " +
-          buah[0].latin;
-
-          document.getElementById("text-2").innerHTML =
-          "Buah " +
-          buah[1].nama +
-          " berwarna " +
-          buah[1].warna +
-          " memiliki nama latin " +
-          buah[1].latin;
-
-          document.getElementById("text-3").innerHTML =
-          "Buah " +
-          buah[2].nama +
-          " berwarna " +
-          buah[2].warna +
-          " memiliki nama latin " +
-          buah[2].latin;
-
-
-          document.getElementById("text-4").innerHTML =
-          "Buah " +
-          buah[3].nama +
-          " berwarna " +
-          buah[3].warna +
-          " memiliki nama latin " +
-          buah[3].latin;
-
-          document.getElementById("text-5").innerHTML =
-          "Buah " +
-          buah[4].nama +
-          " berwarna " +
-          buah[4].warna +
-          " memiliki nama latin " +
-          buah[4].latin;
-
-          document.getElementById("text-6").innerHTML =
-          "Buah " +
-          buah[5].nama +
-          " berwarna " +
-          buah[5].warna +
-          " memiliki nama latin " +
-          buah[5].latin;
-
+      let display = () => {
+        let buah = document.querySelector(".buah");
+        fruit.forEach((item) => {
+          let card = document.createElement("div");
+          card.innerHTML = `<div class="col-sm-4">
+                <div class="card" style="width: 15rem">
+                  <img
+                    class="card-img-top"
+                    src= "${item.img}"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      ${item.nama}
+                      <br>
+                      ${item.latin}
+                      <br>
+                      ${item.warna}
+                      </p>
+                  </div>
+                </div>
+              </div>`;
+          buah.appendChild(card);
+        });
       };
+
+      // revealIt = () => {
+      //   document.getElementById("text-1").innerHTML =
+      //     "Buah " +
+      //     buah[0].nama +
+      //     " berwarna " +
+      //     buah[0].warna +
+      //     " memiliki nama latin " +
+      //     buah[0].latin;
+
+      //     document.getElementById("text-2").innerHTML =
+      //     "Buah " +
+      //     buah[1].nama +
+      //     " berwarna " +
+      //     buah[1].warna +
+      //     " memiliki nama latin " +
+      //     buah[1].latin;
+
+      //     document.getElementById("text-3").innerHTML =
+      //     "Buah " +
+      //     buah[2].nama +
+      //     " berwarna " +
+      //     buah[2].warna +
+      //     " memiliki nama latin " +
+      //     buah[2].latin;
+
+      //     document.getElementById("text-4").innerHTML =
+      //     "Buah " +
+      //     buah[3].nama +
+      //     " berwarna " +
+      //     buah[3].warna +
+      //     " memiliki nama latin " +
+      //     buah[3].latin;
+
+      //     document.getElementById("text-5").innerHTML =
+      //     "Buah " +
+      //     buah[4].nama +
+      //     " berwarna " +
+      //     buah[4].warna +
+      //     " memiliki nama latin " +
+      //     buah[4].latin;
+
+      //     document.getElementById("text-6").innerHTML =
+      //     "Buah " +
+      //     buah[5].nama +
+      //     " berwarna " +
+      //     buah[5].warna +
+      //     " memiliki nama latin " +
+      //     buah[5].latin;
+
+      // };
     </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
