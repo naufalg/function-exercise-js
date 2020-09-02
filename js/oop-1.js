@@ -128,7 +128,9 @@ num1.isPrima(); //true
 // menggunakan DOM
 
 // #### Jawaban ####
-import { hewan } from "./data.js";
+import { animal, fruit, displayAnimal, displayFruit } from "./data";
+
+
 
 // #### Soal ####
 // Buat sebuah modul dengan ketentuan:

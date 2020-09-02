@@ -37,69 +37,87 @@
           <div class="col">
             <h3>Jawaban</h3>
             <details>
-              <!-- <button class="btn btn-warning" onclick="button()">
-                Try it!
-              </button> -->
+              <button class="btn btn-warning" onclick="displayFruit()">
+                Reveal fruit!
+              </button>
+              <button class="btn btn-info" onclick="displayAnimal()">
+                Reveal animal!
+              </button>
+              <div class="container">
+                <div class="row buah center"></div>
+              </div>
+              <div class="container">
+                <div class="row hewan center"></div>
+              </div>
               <p id="result"></p>
               <details>
                 <pre class="code-area">
                 <code>
                   //export data.js
-                  let hewan = [
-                    {
-                      name: "cat",
-                      leg: 4,
-                      fur: true,
-                    },
-                    {
-                      name: "mola-mola",
-                      leg: null,
-                      fur: false,
-                    },
-                    {
-                      name: "bat",
-                      leg: 2,
-                      fur: false,
-                    },
-                  ];
-
-                  const buah = [
-                    {
-                      nama: "Pisang",
-                      latin: "Musa acuminata",
-                      warna: "Kuning",
-                    },
-                    {
-                      nama: "Jambu",
-                      latin: "Psidium guajava",
-                      warna: "Hijau",
-                    },
-                    {
-                      nama: "Apel",
-                      latin: "Malus domestica",
-                      warna: "Merah",
-                    },
-                    {
-                      nama: "Durian",
-                      latin: "Durio zibethinus",
-                      warna: "Kuning",
-                    },
-                    {
-                      nama: "Mangga",
-                      latin: "Mangifera indica",
-                      warna: "Hijau-Oranye",
-                    },
-                    {
-                      nama: "Semangka",
-                      latin: "Citrullus lanatus",
-                      warna: "Hijau-merah",
-                    },
-                  ];
-
-                  export { hewan, buah };
+                  let animal = [
+                  {
+                    name: "bat",
+                    movement: "2 wings",
+                    move: "fly",
+                    img: "../../../../assets/images/golbat.png",
+                  },
+                  {
+                    name: "cat",
+                    movement: "4 legs",
+                    move: "walk",
+                    img: "../../../../assets/images/leomon.png",
+                  },
+                  {
+                    name: "egg",
+                    movement: "2 legs",
+                    move: "walk",
+                    img: "../../../../assets/images/digitamamon.png",
+                  },
+                ];
+          
+                  let fruit = [
+                  {
+                    nama: "Pisang",
+                    latin: "Musa acuminata",
+                    warna: "Kuning",
+                    img: "../../../../assets/images/pisang.png",
+                  },
+                  {
+                    nama: "Jambu",
+                    latin: "Psidium guajava",
+                    warna: "Hijau",
+                    img: "../../../../assets/images/jambu.jpg",
+                  },
+                  {
+                    nama: "Apel",
+                    latin: "Malus domestica",
+                    warna: "Merah",
+                    img: "../../../../assets/images/apel.jpg",
+                  },
+                  {
+                    nama: "Durian",
+                    latin: "Durio zibethinus",
+                    warna: "Kuning",
+                    img: "../../../../assets/images/durian.jpg",
+                  },
+                  {
+                    nama: "Mangga",
+                    latin: "Mangifera indica",
+                    warna: "Hijau-Oranye",
+                    img: "../../../../assets/images/mangga.jpg",
+                  },
+                  {
+                    nama: "Semangka",
+                    latin: "Citrullus lanatus",
+                    warna: "Hijau-merah",
+                    img: "../../../../assets/images/semangka.jpg",
+                  },
+                ];
+          
+                  export { animal, fruit };
 
                   //import index.js
-                  import { hewan, buah } from "./data.js";
+                  import { animal, fruit } from "./data.js";
                 </code>
                 </pre>
               </details>
@@ -139,24 +157,26 @@
                 <pre class="code-area">
                     <code>
                         // export karyawan.js
-                        // jshint esversion:6
-                        let karyawan = [
-                        { name: "Bill Gates", role: "IT Helpdesk", salary: 1000 },
-                        { name: "Elon Musk", role: "Professional Meme Developer", salary: 3000 },
-                        { name: "Takumi Fujiwara", role: "Professional courier", salary: 5000 },
-                        ];
-
-                        introduce = (i) => {
-                            alert(
-                                `Hi! I'm ${karyawan[i].name} as a ${karyawan[i].role} and paid for ${karyawan[i].salary} dollars`
-                                );
-                            };
-                            
-                        export { karyawan, introduce };
-
+                        class Karyawan {
+                          constructor(name, role, salary) {
+                            this.name = name;
+                            this.role = role;
+                            this.salary = salary;
+                          }
+                        
+                        
+                          introduce() {
+                            return `Hi! I'm ${this.name} as a ${this.role} and paid for ${this.salary} dollars`;
+                          }
+                        }
 
                         // import karyawan.js
                         import {karyawan, introduce} from "./karyawan.js";
+
+                        let bill = new Karyawan("Bill Gates", "IT Helpdesk", 1000);
+                        let elon = new Karyawan("Elon Musk", "Professional Meme Developer", 3000);
+                        let takumi = new Karyawan("Takumi Fujiwara", "Professional courier", 5000);
+
                     </code>
                 </pre>
               </details>
@@ -167,8 +187,121 @@
     </div>
 
     <!-- script -->
+    <!-- <script src="../../../../js/modulecall.js"></script> -->
 
-    <script></script>
+    <script>
+      let fruit = [
+        {
+          nama: "Pisang",
+          latin: "Musa acuminata",
+          warna: "Kuning",
+          img: "../../../../assets/images/pisang.png",
+        },
+        {
+          nama: "Jambu",
+          latin: "Psidium guajava",
+          warna: "Hijau",
+          img: "../../../../assets/images/jambu.jpg",
+        },
+        {
+          nama: "Apel",
+          latin: "Malus domestica",
+          warna: "Merah",
+          img: "../../../../assets/images/apel.jpg",
+        },
+        {
+          nama: "Durian",
+          latin: "Durio zibethinus",
+          warna: "Kuning",
+          img: "../../../../assets/images/durian.jpg",
+        },
+        {
+          nama: "Mangga",
+          latin: "Mangifera indica",
+          warna: "Hijau-Oranye",
+          img: "../../../../assets/images/mangga.jpg",
+        },
+        {
+          nama: "Semangka",
+          latin: "Citrullus lanatus",
+          warna: "Hijau-merah",
+          img: "../../../../assets/images/semangka.jpg",
+        },
+      ];
+
+      let displayFruit = () => {
+        let buah = document.querySelector(".buah");
+        fruit.forEach((item) => {
+          let card = document.createElement("div");
+          card.innerHTML = `<div class="col-sm-4">
+                <div class="card" style="width: 15rem">
+                  <img
+                    class="card-img-top"
+                    src= "${item.img}"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      ${item.nama}
+                      <br>
+                      ${item.latin}
+                      <br>
+                      ${item.warna}
+                      </p>
+                  </div>
+                </div>
+              </div>`;
+          buah.appendChild(card);
+        });
+      };
+
+      let animal = [
+        {
+          name: "bat",
+          movement: "2 wings",
+          move: "fly",
+          img: "../../../../assets/images/golbat.png",
+        },
+        {
+          name: "cat",
+          movement: "4 legs",
+          move: "walk",
+          img: "../../../../assets/images/leomon.png",
+        },
+        {
+          name: "egg",
+          movement: "2 legs",
+          move: "walk",
+          img: "../../../../assets/images/digitamamon.png",
+        },
+      ];
+
+      let displayAnimal = () => {
+        let hewan = document.querySelector(".hewan");
+        animal.forEach((item) => {
+          let card = document.createElement("div");
+          card.innerHTML = `<div class="col-sm-4">
+          <div class="card" style="width: 15rem">
+            <img
+              class="card-img-top"
+              src= "${item.img}"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                ${item.name}
+                <br>
+                ${item.movement}
+                <br>
+                ${item.move}
+                </p>
+            </div>
+          </div>
+        </div>`;
+          hewan.appendChild(card);
+        });
+      };
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

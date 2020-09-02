@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro - Pseudocode</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../route/style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-intro.html">Back</a>
+    </div>
+    <div class="container">
+      <details>
+        <div class="row">
+          <div class="col">
+            <h3>Soal</h3>
+            <p>
+              Buatlah Algoritma untuk menyelesaikan problem ini
+              <br />
+              Ridho ingin memiliki program untuk mengetahui hasil perbandingan
+              dari 2 buah nilai yang tersedia.
+              <br />
+              Program harus bisa menampilkan output nilai terbesar atau nilai
+              yang sama jika kedua buah nilai memiliki nilai yang sama.
+              <br />
+              Contohnya jika Ridho input nilai pertama 10 dan nilai kedua 20.
+              Maka output program adalah: 20 nilai terbesar
+              <br />
+              Jika Ridho input nilai pertama adalah 5 dan nilai kedua adalah 5.
+              Maka output program adalah nilai pertama sama dengan nilai kedua
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jawaban</h3>
+            <details>
+              <p id="result"></p>
+              <details>
+                <pre class="code-area">
+                  <code>
+                    INPUT "num1" data
+                    INPUT "num2" data
+                    
+                    IF (num1 > num2)
+                        THEN PRINT (num1 + "memiliki nilai terbesar")
+                    
+                    ELSE IF (num2 > num1) 
+                        THEN PRINT (num2 + "memiliki nilai terbesar")
+                    
+                    ELSE 
+                        PRINT ("nilai pertama sama dengan nilai kedua)                    
+                  </code>
+                  </pre>
+              </details>
+            </details>
+          </div>
+        </div>
+      </details>
+      <br />
+      <hr />
+      <br />
+      <details>
+        <div class="row">
+          <div class="col">
+            <h3>Soal</h3>
+            <p>
+              Buatlah Algoritma untuk menyelesaikan problem ini
+              <br />
+              Amanda ingin memiliki aplikasi yang dapat menghitung harga tiket
+              pesawat yang harus dibayar oleh Traveler.
+              <br />
+              Data yang akan diinput adalah
+              <br />
+              Jumlah Traveler
+              <br />
+              Harga Tiket Pesawat
+              <br />
+              Cek apakah membeli tiket one way or two way
+              <br />
+              Misalnya jumlah traveler 2 orang. Per tiketnya seharga Rp 600.000.
+              <br />
+              Maka program akan memberikan nilai berupa harga yang harus dibayar
+              sebesar Rp 1.200.000
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jawaban</h3>
+            <details>
+              <p id="result"></p>
+              <details>
+                <pre class="code-area">
+                      <code>
+                        INPUT "jumlah traveler" data
+                        INPUT "harga tiket" data
+                        INPUT "one way" OR "two way"
+                        
+                        IF (one way)
+                            THEN CALCULATE ("jumlah traveler" * "harga tiket")
+                            STORE result to "harga total"
+                            SHOW "harga total"
+                        ELSE THEN CALCULATE ("jumlah traveler" * "harga tiket" * 2)
+                            STORE result to "harga total"
+                            SHOW "harga total"                        
+                      </code>
+                  </pre>
+              </details>
+            </details>
+          </div>
+        </div>
+      </details>
+      <br />
+      <hr />
+      <br />
+      <details>
+        <div class="row">
+          <div class="col">
+            <h3>Soal</h3>
+            <p>
+              Buatlah Algoritma untuk menyelesaikan problem ini
+              <br />
+              William ingin menampilkan deretan nilai dari 0 sampai N.
+              <br />
+              N adalah nilai akhir yang diinputkan.
+              <br />
+              Jika William menginput N dengan nilai 100, maka program akan
+              menampilkan deretan nilai 1, 2, 3, 4, 5, … , 100
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jawaban</h3>
+            <details>
+              <p id="result"></p>
+              <details>
+                <pre class="code-area">
+                  <code>
+                    ASSIGN "count" data to 1
+                    INPUT "n"
+                    
+                    WHILE ("count" < = "n")
+                        SHOW "count"
+                        ADD "count" by 1
+                        STORE result to "count"                    
+                  </code>
+                  </pre>
+              </details>
+            </details>
+          </div>
+        </div>
+      </details>
+      <br />
+      <hr />
+      <br />
+      <details>
+        <div class="row">
+          <div class="col">
+            <h3>Soal</h3>
+            <p>
+              Buatlah Algoritma untuk menyelesaikan problem ini
+              <br />
+              David memiliki program yang membutuhkan untuk convert data dari
+              jumlah jam ke detik
+              <br />
+              Contohnya jika program memiliki input 2 jam maka output yang
+              diharapkan adalah 7200 detik
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jawaban</h3>
+            <details>
+              <p id="result"></p>
+              <details>
+                <pre class="code-area">
+                  <code>
+                    INPUT "hours" data
+                    CALCULATE "hours" times 60
+                    STORE result to "minutes"
+                    CALCULATE "minutes" times 60
+                    STORE result to "second"
+                    show "second" data                    
+                  </code>
+                  </pre>
+              </details>
+            </details>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- script -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

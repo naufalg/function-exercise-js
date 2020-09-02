@@ -44,15 +44,17 @@
               <details>
                 <pre class="code-area">
                         <code>
-                            String.prototype.reverseString = function () {
-                                var newStr = "";
-                                var i = this.length;
-                                while (i > 0) {
-                                  newStr += this.substring(i - 1, i);
-                                  i--;
-                                }
-                                return newStr;
-                              };                              
+                          String.prototype.reverseString = function () {
+                            var newStr = "";
+                            var i = this.length;
+                            while (i > 0) {
+                              newStr += this.substring(i - 1, i);
+                              i--;
+                            }
+                            return newStr;
+                          };
+                          
+                          "Text123".reverseString(); //"321txeT"
                         </code>
                     </pre>
               </details>
@@ -91,7 +93,24 @@
               <details>
                 <pre class="code-area">
                     <code>
-                        
+                      Number.prototype.isPrima = function () {
+                        if (this == 1) {
+                          return false;
+                        } else if (this == 2) {
+                          return true;
+                        } else {
+                          for (let x = 2; x < this; x++) {
+                            if (this % x == 0) {
+                              return false;
+                            }
+                          }
+                          return true;
+                        }
+                      };
+                      
+                      
+                      let num1 = 11;
+                      num1.isPrima(); // true                      
                     </code>
                 </pre>
               </details>
@@ -103,73 +122,7 @@
 
     <!-- script -->
 
-    <script>
-      class Enemy {
-        constructor(name, speed, healthPoint, attackPoint, isDead) {
-          this.name = name;
-          this.speed = speed;
-          this.healthPoint = healthPoint;
-          this.attackPoint = attackPoint;
-          this.isDead = isDead;
-        }
-
-        attack() {
-          this.healthPoint -= this.attackPoint;
-          return `HP ${this.name} menjadi ${this.healthPoint} setelah diserang ${this.attackPoint} poin`;
-        }
-
-        fatality() {
-          healthPoint = 0;
-          isDead = true;
-          return `Wasted, your HP is ${hp}`;
-        }
-      }
-
-      class Pocong extends Enemy {
-        jump() {
-          this.speed += 50;
-          this.attackPoint += 50;
-          return `${this.speed} ${this.attackPoint}`;
-        }
-
-        superJump() {
-          this.speed += 100;
-          this.attackPoint += 100;
-          return `${this.speed} ${this.attackPoint}`;
-        }
-      }
-
-      class Zombie extends Enemy {
-        walk() {
-          this.speed -= 50;
-          this.attackPoint -= 50;
-          return `${this.speed} ${this.attackPoint}`;
-        }
-
-        rage() {
-          this.speed += 300;
-          this.attackPoint += 300;
-          return `${this.speed} ${this.attackPoint}`;
-        }
-      }
-
-      let villain = new Enemy("aang", 100, 1000, 10, false);
-      let pocoong = new Pocong("Pocong", 120, 1500, 20, false);
-      console.log(villain.name);
-      console.log(villain.speed);
-      console.log(villain.healthPoint);
-      console.log(villain.attackPoint);
-      console.log(villain.isDead);
-      console.log(villain.attack());
-      console.log(pocoong.name);
-      console.log(pocoong.speed);
-      console.log(pocoong.healthPoint);
-      console.log(pocoong.attackPoint);
-      console.log(pocoong.isDead);
-      console.log(pocoong.jump());
-      // console.log(pocoong.superJump());
-      console.log(pocoong.attack());
-    </script>
+    <script></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
