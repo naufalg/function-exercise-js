@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../route/style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-async.html">Back</a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Soal</h3>
+          <p>
+            Buatlah fungsi fetch menggunakan async/await sebuah data dengan
+            endpoint “https://api.github.com/users/github_username”
+            <br />
+            - Buat tampilan semenarik mungkin dari data yang disediakan oleh
+            github
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Jawaban</h3>
+          <details>
+            <button class="btn btn-warning" onclick="button()">Try it!</button>
+            <div class="container">
+              <div class="row display-data center"></div>
+            </div>
+            <details>
+              <pre class="code-area">
+                <code>
+                    async function getGithub(username) {
+                        try {
+                          let response = await fetch(
+                            `https://api.github.com/users/${username}`
+                          );
+                          let data = await response.json();
+                          console.log("data", data);
+                          console.log("name", data.name); // name Naufal Ghifari
+                          console.log("login", data.login); // login naufalg
+                          console.log("avatar_url", data.avatar_url); // avatar_url https://avatars0.githubusercontent.com/u/66429734?v=4
+                          console.log("html_url", data.html_url); // html_url https://github.com/naufalg
+                          console.log("location", data.location); // location Indonesia
+                          console.log("public_repos", data.public_repos); // public_repos 24
+                          console.log("followers", data.followers); // followers 11
+                        } catch {
+                          console.log("Error");
+                        }
+                      }
+                      
+                      getGithub(naufalg);
+                    </code>
+            </pre>
+            </details>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <!-- script -->
+
+    <script>
+      let button = () => {
+        async function getGithub(username) {
+          try {
+            let response = await fetch(
+              `https://api.github.com/users/${username}`
+            );
+            let data = await response.json();
+            console.log("data", data);
+            console.log("name", data.name); // name Naufal Ghifari
+            console.log("login", data.login); // login naufalg
+            console.log("avatar_url", data.avatar_url); // avatar_url https://avatars0.githubusercontent.com/u/66429734?v=4
+            console.log("html_url", data.html_url); // html_url https://github.com/naufalg
+            console.log("location", data.location); // location Indonesia
+            console.log("public_repos", data.public_repos); // public_repos 24
+            console.log("followers", data.followers); // followers 11
+            let displayData = document.querySelector(".display-data");
+            let card = document.createElement("div");
+            card.innerHTML = `<div class="col-sm-6">
+                              <div class="card shadow-lg" style="width: 18rem; margin-top: 5vh">
+                                <img
+                                  class="card-img-top shadow "
+                                  src= "${data.avatar_url}"
+                                  alt="Card image cap"
+                                />
+                                <div class="card-body">
+                                    <hr>
+                                  <p class="card-text lead">
+                                    ${data.name}
+                                    <br>
+                                    ${data.login}
+                                    <br>
+                                    ${data.location}
+                                    <br>
+                                    Repo: ${data.public_repos}
+                                    <br>
+                                    Followers: ${data.followers}
+                                    <br>
+                                    <a href="${data.html_url}">${data.html_url}</a>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>`;
+            displayData.appendChild(card);
+          } catch {
+            console.log("Error");
+          }
+        }
+
+        getGithub("naufalg");
+      };
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

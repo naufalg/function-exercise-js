@@ -8,6 +8,11 @@ pre, code {
   font-family: monospace, monospace;
 }
 
+details {
+  margin: 5vh inherit;
+  padding: 5vh inherit;
+}
+
 .btn {
   margin: 2vh 0;
 }

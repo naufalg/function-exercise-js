@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous - Promise</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../route/style/style.css" />
+  </head>
+  <!-- body -->
+  <body>
+    <div class="container">
+      <a class="btn btn-success" href="../js-async.html">Back</a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Soal</h3>
+          <p>
+            Buatlah fungsi fetch menggunakan promise sebuah data dengan endpoint
+            “https://restcountries.eu/rest/v2/all”
+            <br />
+            - Tampilkan seluruh bendera negara dan nama negaranya ke dalam dom
+            <br />
+            - Responsif
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Jawaban</h3>
+          <details>
+            <button class="btn btn-warning" onclick="button()">Try it!</button>
+            <div class="container">
+              <div class="row display-data center"></div>
+            </div>
+            <details>
+              <pre class="code-area">
+                <code>
+                    class Nation {
+                        constructor(name, capital, callingCodes, flag) {
+                          this.name = name;
+                          this.capital = capital;
+                          this.callingCodes = callingCodes;
+                          this.flag = flag;
+                        }
+                    }
+
+                    // fetch
+                    fetch("https://restcountries.eu/rest/v2/region/asia")
+                    .then ((result) => {
+                        return result.json();
+                    })
+                
+                    .then ((result) => {
+                        // Indonesia 
+                        const indonesia = new Nation(result[12].name, result[12].capital, result[12].callingCodes, result[12].flag)
+                        console.log(result[12].name); // Indonesia
+                        console.log(result[12].capital); // Jakarta
+                        console.log(result[12].callingCodes); // 62
+                        console.log(result[12].flag); //https://restcountries.eu/data/idn.svg
+                        console.log(indonesia)
+
+                        // Singapore
+                        const singapore = new Nation(result[36].name, result[36].capital, result[36].callingCodes, result[36].flag)
+                        console.log(result[36].name); // Singapore
+                        console.log(result[36].capital); // Singapore
+                        console.log(result[36].callingCodes); // 65
+                        console.log(result[36].flag); //https://restcountries.eu/data/sgp.svg
+                        console.log(singapore)
+
+                        // Malaysia
+                        const malaysia = new Nation(result[24].name, result[24].capital, result[24].callingCodes, result[24].flag)
+                        console.log(result[24].name); // Malaysia
+                        console.log(result[24].capital); // Kuala Lumpur
+                        console.log(result[24].callingCodes); // 60
+                        console.log(result[24].flag); //https://restcountries.eu/data/mys.svg
+                        console.log(malaysia)
+
+                        // Philippines
+                        const philippines = new Nation(result[33].name, result[33].capital, result[33].callingCodes, result[33].flag)
+                        console.log(result[33].name); // Philippines
+                        console.log(result[33].capital); // Manila
+                        console.log(result[33].callingCodes); // 63
+                        console.log(result[33].flag); //https://restcountries.eu/data/phl.svg
+                        console.log(philippines)
+
+                        // to array
+                        let nationArr = [indonesia, singapore, malaysia, philippines];
+                    })
+                </code>
+            </pre>
+            </details>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <!-- script -->
+
+    <script>
+      let button = () => {
+        class Nation {
+          constructor(name, capital, callingCodes, flag) {
+            this.name = name;
+            this.capital = capital;
+            this.callingCodes = callingCodes;
+            this.flag = flag;
+          }
+        }
+
+        fetch("https://restcountries.eu/rest/v2/region/asia")
+          .then((result) => {
+            return result.json();
+          })
+
+          .then((result) => {
+            // Indonesia
+            const indonesia = new Nation(
+              result[12].name,
+              result[12].capital,
+              result[12].callingCodes,
+              result[12].flag
+            );
+
+            // Singapore
+            const singapore = new Nation(
+              result[36].name,
+              result[36].capital,
+              result[36].callingCodes,
+              result[36].flag
+            );
+
+            // Malaysia
+            const malaysia = new Nation(
+              result[24].name,
+              result[24].capital,
+              result[24].callingCodes,
+              result[24].flag
+            );
+
+            // Philippines
+            const philippines = new Nation(
+              result[33].name,
+              result[33].capital,
+              result[33].callingCodes,
+              result[33].flag
+            );
+
+            let nationArr = [indonesia, singapore, malaysia, philippines];
+            let displayData = document.querySelector(".display-data");
+            nationArr.forEach((item) => {
+              console.log(item.name);
+              let card = document.createElement("div");
+              card.innerHTML = `<div class="col-sm-6">
+                      <div class="card shadow" style="width: 18rem; margin-top: 5vh">
+                        <img
+                          class="card-img-top shadow-sm"
+                          src= "${item.flag}"
+                          alt="Card image cap"
+                        />
+                        <div class="card-body">
+                          <p class="card-text">
+                            ${item.name}
+                            <br>
+                            ${item.capital}
+                            <br>
+                            + ${item.callingCodes}
+                            </p>
+                        </div>
+                      </div>
+                    </div>`;
+              displayData.appendChild(card);
+            });
+          });
+      };
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
